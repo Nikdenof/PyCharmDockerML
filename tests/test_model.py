@@ -8,6 +8,10 @@ def model():
     return SimpleMLP(input_size=10, hidden_size=20, output_size=1)
 
 
+def test_gpu_availability():
+    assert torch.cuda.is_available()
+
+
 def test_model_creation(model):
     assert isinstance(model, SimpleMLP), "Model should be an instance of SimpleMLP"
 
